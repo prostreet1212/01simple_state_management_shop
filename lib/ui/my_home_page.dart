@@ -12,6 +12,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('build');
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 172, 255, 191),
       appBar: AppBar(
@@ -19,7 +20,7 @@ class MyHomePage extends StatelessWidget {
         leading: Consumer<Marketing>(builder: (context, state, child) {
           return
             Badge(
-            badgeContent: Text('${context.watch<Marketing>().badgeList.length}'),
+            badgeContent: Text('${state.badgeList.length}'),
             position: const BadgePosition(start: 26, bottom: 26),
             child: IconButton(
               onPressed: () {
